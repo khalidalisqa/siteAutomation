@@ -10,8 +10,11 @@ describe('template spec', () => {
     cy.get('#firstName').type("Ali");
     cy.get('#lastName').type("shan");
     cy.get('#userEmail').type("upmail@gmail.com");
+    cy.get('#genterWrapper > .col-md-9 > :nth-child(1)').click();
     cy.get('#userNumber').type("03009988776");
     cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1)').click();
+    cy.get('.subjects-auto-complete__value-container').click();
+    cy.get('#subjectsInput',{ timeout: 10000}).type("English{enter}");
     cy.get('#uploadPicture', { timeout: 20000 }).selectFile(
       "cypress/fixtures/abc.text"
     );
@@ -24,5 +27,5 @@ describe('template spec', () => {
     cy.get('#react-select-3-input', {timeout: 10000}).type("NCR{enter}");
     cy.get('#city > .css-yk16xz-control > .css-1hwfws3', {timeout: 10000}).click();
     cy.get('#react-select-4-input', {timeout: 10000}).type("Delhi{enter}");
-  })
+   })
 })
