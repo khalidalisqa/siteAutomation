@@ -11,11 +11,18 @@ describe('template spec', () => {
     cy.get('#lastName').type("shan");
     cy.get('#userEmail').type("upmail@gmail.com");
     cy.get('#userNumber').type("03009988776");
-    //cy.get('#dateOfBirthInput').type('{backspace}{enter}');
-    //cy.get('#dateOfBirthInput').type("2 DEC 1995");
     cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1)').click();
     cy.get('#uploadPicture', { timeout: 20000 }).selectFile(
       "cypress/fixtures/abc.text"
     );
+    for (let i = 0; i < 10; i++) {
+      cy.get('#dateOfBirthInput').type('{backspace}');
+    }
+    cy.get('#dateOfBirthInput').type('2 DEC 1995{enter}');
+    cy.get('#currentAddress').type("abc@gmail.com");
+    cy.get('#state > .css-yk16xz-control > .css-1hwfws3', {timeout: 10000}).click();
+    cy.get('#react-select-3-input', {timeout: 10000}).type("NCR{enter}");
+    cy.get('#city > .css-yk16xz-control > .css-1hwfws3', {timeout: 10000}).click();
+    cy.get('#react-select-4-input', {timeout: 10000}).type("Delhi{enter}");
   })
 })
