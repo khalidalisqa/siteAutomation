@@ -11,7 +11,11 @@ describe('template spec', () => {
     cy.get('#lastName').type("shan");
     cy.get('#userEmail').type("upmail@gmail.com");
     cy.get('#userNumber').type("03009988776");
-    cy.get('#dateOfBirthInput').type('{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}');
-    cy.get('#dateOfBirthInput').type("2 DEC 1995");
+    //cy.get('#dateOfBirthInput').type('{backspace}{enter}');
+    //cy.get('#dateOfBirthInput').type("2 DEC 1995");
+    cy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1)').click();
+    cy.get('#uploadPicture', { timeout: 20000 }).selectFile(
+      "cypress/fixtures/abc.text"
+    );
   })
 })
