@@ -1,6 +1,6 @@
 /// <reference types="cypress-xpath" />
-describe('template spec', () => {
-  it('passes', () => {
+describe('Test suit-001', () => {
+  it('Automate the form', () => {
     // Clears cookies for the current domain
     cy.clearCookies();
     // Set viewport width and height
